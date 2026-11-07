@@ -1,0 +1,43 @@
+{
+  "$schema": "https://pg-language-server.com/0.28.2/schema.json",
+  "extends": [],
+  // .gitignore を尊重して target/ などを解析対象から外す
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignore": []
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "splinter": {
+    "enabled": true
+  },
+  "format": {
+    "enabled": false
+  },
+  "pglinter": {
+    "enabled": false
+  },
+  "typecheck": {
+    "enabled": true
+  },
+  "plpgsqlCheck": {
+    "enabled": true
+  },
+  // Makefile.toml の set-env-local / compose.yaml の postgres に合わせた接続情報
+  "db": {
+    "host": "localhost",
+    "port": 5432,
+    "username": "app",
+    "password": "passwd",
+    "database": "app",
+    "connTimeoutSecs": 10
+  }
+}
